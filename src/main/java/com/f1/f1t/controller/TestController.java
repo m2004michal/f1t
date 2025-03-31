@@ -1,5 +1,7 @@
 package com.f1.f1t.controller;
 
+import com.f1.f1t.model.raceDtoModel.RaceScheduleDto;
+import com.f1.f1t.service.RaceService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,9 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @AllArgsConstructor
 public class TestController {
 
+    private final RaceService raceService;
+
     @GetMapping("/test")
-    public ResponseEntity<String> test() {
-        return new ResponseEntity<>("test", HttpStatus.OK);
+    public ResponseEntity<RaceScheduleDto> test() {
+        return new ResponseEntity<>(raceService.getRacesResponseAsDto("2025"), HttpStatus.OK);
     }
 
 
