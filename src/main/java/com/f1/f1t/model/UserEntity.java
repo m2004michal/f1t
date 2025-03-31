@@ -31,9 +31,6 @@ public class UserEntity implements UserDetails {
     @Nullable
     private String surname;
     private Date createdDate;
-    private double currentFeeFlat;
-    private double currentFeePercentage;
-    private int level;
     @Enumerated(EnumType.STRING)
     private Role role;
     private boolean isAccountExpired;
