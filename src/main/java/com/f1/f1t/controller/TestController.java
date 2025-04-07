@@ -14,12 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @AllArgsConstructor
 public class TestController {
 
-    private final RaceService raceService;
 
-    @GetMapping("/test")
-    public ResponseEntity<RaceScheduleDto> test() {
-        return new ResponseEntity<>(raceService.getRacesResponseAsDto("2025"), HttpStatus.OK);
-    }
 
 
 
